@@ -18,7 +18,9 @@
   "homepage": "https://github.com/OpenVidu/openvidu-tutorials#readme",
   "dependencies": {
     "body-parser": "1.18.2",
+    "compression": "^1.7.4",
     "express": "4.16.3",
-    "openvidu-node-client": "2.8.0"
+    "openvidu-node-client": "^2.12.0",
+    "spdy": "^4.0.2"
   }
 }
