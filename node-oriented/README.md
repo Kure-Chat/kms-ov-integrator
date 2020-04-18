@@ -55,12 +55,9 @@ docker run -d --net="host" -e openvidu.secret=MAXIMUM -e openvidu.publicurl=http
 Export certificate in p12 format (password will be asked)
 YOUR_CRT.crt and YOUR_KEY.key files may be YOUR_CRT.pem a
 
-### Export certificate in p12 format (password will be asked) ###
-### YOUR_CRT.crt and YOUR_KEY.key files may be YOUR_CRT.pem and YOUR_KEY.pem files instead ###
-
 Step 1:
 
-```
+```bash
 openssl pkcs12 -export -name YOUR_KEYSTORE_ALIAS -in /etc/httpd/conf/ssl/maximumroulette_com.crt -inkey /etc/httpd/conf/ssl/maximumroulette.com.key -out p12keystore.p12
 ```
  - password m**********
