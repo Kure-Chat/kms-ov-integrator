@@ -56,11 +56,23 @@ app.use(compression());
     }
  */
 
-// Listen (start app with node server.js)
-var options = {
+var OPENVIDU_URL = process.argv[2];
+var OPENVIDU_SECRET = process.argv[3];
+
+var options = null;
+
+if (OPENVIDU_URL.indexOf("localhost") !== -1) {
+  options = {
+    key: fs.readFileSync(__dirname + '/openvidukey.pem'),
+    cert: fs.readFileSync(__dirname + '/openviducert.pem')
+  };
+} else {
+  options = {
     key: fs.readFileSync('/etc/httpd/conf/ssl/maximumroulette.com.key'),
     cert: fs.readFileSync('/etc/httpd/conf/ssl/maximumroulette_com.crt')
-};
+  };
+}
+
 
 spdy
     .createServer(options, app)
@@ -76,10 +88,6 @@ spdy
 // classic http 1.1
 // https.createServer(options, app).listen(5000);
 
-// Environment variable: URL where our OpenVidu server is listening
-var OPENVIDU_URL = process.argv[2];
-// Environment variable: secret shared with our OpenVidu server
-var OPENVIDU_SECRET = process.argv[3];
 
 // Entrypoint to OpenVidu Node Client SDK
 var OV = new OpenVidu(OPENVIDU_URL, OPENVIDU_SECRET);
