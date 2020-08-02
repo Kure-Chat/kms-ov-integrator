@@ -123,13 +123,14 @@ Without TURN:
   docker run -d --net="host" -e openvidu.secret=MAXIMUM -e openvidu.publicurl=https://maximumroulette.com:4443 -e openvidu.cdr=true -e server.port=4443 -e --rm -v /var/run/docker.sock:/var/run/docker.sock -v /var/applications/kurento-project/rec:/var/applications/kurento-project/rec -e openvidu.recording=true -e MY_UID=$(id -u $USER) -e openvidu.recording.path=/var/applications/kurento-project/rec -e openvidu.recording.public-access=true -e openvidu/openvidu-server-kms:2.12.0
 ```
 
-Run node for hosting client:
 
-Run:
+Run media-server:
 
 ```py
  docker run -d --net="host" -e openvidu.secret=MAXIMUM -e openvidu.publicurl=https://maximumroulette.com:4443 -e openvidu.cdr=true -e server.port=4443 -e --rm -v /var/run/docker.sock:/var/run/docker.sock -v /var/applications/kurento-project/rec:/var/applications/kurento-project/rec -e openvidu.recording=true -e MY_UID=$(id -u $USER) -e openvidu.recording.path=/var/applications/kurento-project/rec -e openvidu.recording.public-access=true -e server.ssl.key-store=/var/applications/kurento-project/YOUR_KEYSTORE_NAME.jks -e server.ssl.key-store-password=maxi123 -e server.ssl.key-alias=YOUR_KEYSTORE_ALIAS maximumroulette:2.12.0
 ```
+
+Run node for hosting client:
 
 ```js
   node server.js https://maximumroulette.com:4443 MAXIMUM
