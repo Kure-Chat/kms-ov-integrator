@@ -1,8 +1,9 @@
 
- # Application based on:                    #
-## kurento media server KMS project        ##
-## openvidu server/tutorials project -     ##
-## connector.js from visual-ts-game-engine ##
+# Application based on:                     #
+
+ - <b> kurento media server KMS project        </b>
+ - <b> openvidu server/tutorials project       </b>
+ - <b> connector.js from visual-ts-game-engine </b>
 
 
 ## kms-ov-account-integrator ##
@@ -97,7 +98,7 @@ In order to use your JKS, just give the proper value
 to the following OpenVidu Server properties on launch
 inline:
 
-```console
+```js
   server.ssl.key-store=/var/applications/kurento-project/YOUR_KEYSTORE_NAME.jks
   server.ssl.key-store-password=maxi123
   server.ssl.key-alias=YOUR_KEYSTORE_ALIAS
@@ -107,7 +108,7 @@ In aspect of TURN server:
 
 With TURN server:
 
-```console
+```js
 docker run -d --net="host" -e openvidu.secret=YOUR_SECRET -e openvidu.publicurl=https://IP:4443
         -e openvidu.cdr=true -e server.port=4443 -e KMS_STUN_IP=IP -e KMS_STUN_PORT=19302
         -eKMS_TURN_URL=myuser:mypass@IP:3478 --rm -v /var/run/docker.sock:/var/run/docker.sock
@@ -116,9 +117,9 @@ docker run -d --net="host" -e openvidu.secret=YOUR_SECRET -e openvidu.publicurl=
 
 ```
 
- Without TURN :
+Without TURN:
 
-```console
+```py
   docker run -d --net="host" -e openvidu.secret=MAXIMUM -e openvidu.publicurl=https://maximumroulette.com:4443 -e openvidu.cdr=true -e server.port=4443 -e --rm -v /var/run/docker.sock:/var/run/docker.sock -v /var/applications/kurento-project/rec:/var/applications/kurento-project/rec -e openvidu.recording=true -e MY_UID=$(id -u $USER) -e openvidu.recording.path=/var/applications/kurento-project/rec -e openvidu.recording.public-access=true -e openvidu/openvidu-server-kms:2.12.0
 ```
 
@@ -126,11 +127,11 @@ Run node for hosting client:
 
 Run:
 
-```
+```py
  docker run -d --net="host" -e openvidu.secret=MAXIMUM -e openvidu.publicurl=https://maximumroulette.com:4443 -e openvidu.cdr=true -e server.port=4443 -e --rm -v /var/run/docker.sock:/var/run/docker.sock -v /var/applications/kurento-project/rec:/var/applications/kurento-project/rec -e openvidu.recording=true -e MY_UID=$(id -u $USER) -e openvidu.recording.path=/var/applications/kurento-project/rec -e openvidu.recording.public-access=true -e server.ssl.key-store=/var/applications/kurento-project/YOUR_KEYSTORE_NAME.jks -e server.ssl.key-store-password=maxi123 -e server.ssl.key-alias=YOUR_KEYSTORE_ALIAS maximumroulette:2.12.0
 ```
 
-```console
+```js
   node server.js https://maximumroulette.com:4443 MAXIMUM
 ```
 
