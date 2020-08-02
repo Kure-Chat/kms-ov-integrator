@@ -1,12 +1,11 @@
 
-# Application based on:                   #
-# kurento media server KMS project        #
-# openvidu server/tutorials project -     #
-# connector.js from visual-ts-game-engine #
+ # Application based on:                    #
+## kurento media server KMS project        ##
+## openvidu server/tutorials project -     ##
+## connector.js from visual-ts-game-engine ##
+
 
 ## kms-ov-account-integrator ##
-
-#### Internal data (help) ####
 
  - Middleware server base done node.js.
    This our security middleware server between KMS-OC and
@@ -15,6 +14,11 @@
    https://maximumroulette.com
  - Last containner id: 6cfadd6d2605
  - Recording folder (host) : "/var/applications/kurento-project/rec"
+
+
+## Instructions for running docker KMS-OV servers ##
+
+#### Internal data (help) ####
 
 Install nodejs with yum:
 ```js
