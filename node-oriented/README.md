@@ -9,8 +9,8 @@
 ## kms-ov-account-integrator ##
 
  - Middleware server base done node.js.
-   This our security middleware server between KMS-OC and
- - Protocol http2 used.
+   This our security middleware server between KMS-OV and frontend part
+ - Protocol http2 used (spdy).
  - Public server: 159.89.8.40
    https://maximumroulette.com
  - Last containner id: 6cfadd6d2605
@@ -42,7 +42,7 @@ If you wanna full PWA application run:
   npm i express spdy --save
 ```
 
-## Setup certificate: ##
+### Setup certificate: ###
 
 Install java sdk:
 
