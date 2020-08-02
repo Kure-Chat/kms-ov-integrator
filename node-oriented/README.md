@@ -1,26 +1,28 @@
 
-# Application based on kurento project & openvidu project #
-## kms-ov-integrator ##
+# Application based on:                   #
+# kurento media server KMS project        #
+# openvidu server/tutorials project -     #
+# connector.js from visual-ts-game-engine #
+
+## kms-ov-account-integrator ##
+
+#### Internal data (help) ####
 
  - Middleware server base done node.js.
- - Protocol http2
+   This our security middleware server between KMS-OC and
+ - Protocol http2 used.
+ - Public server: 159.89.8.40
+   https://maximumroulette.com
+ - Last containner id: 6cfadd6d2605
+ - Recording folder (host) : "/var/applications/kurento-project/rec"
 
-## KMS vs openvidu docker variant with nodejs middleware ##
-
-Public server : 159.89.8.40
-                https://maximumroulette.com
-Last containner id: 6cfadd6d2605
-
-Recording folder (host) : "/var/applications/kurento-project/rec"
-
-Only first time:
-
-```
+Install nodejs with yum:
+```js
  sudo yum install -y nodejs OR
 ```
 
 nvm install:
-```
+```bash
   curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
   export NVM_DIR="$HOME/.nvm"
   [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -31,26 +33,24 @@ nvm install:
 
 If you wanna full PWA application run:
 
+```js
+  npm i express spdy --save
 ```
-npm i express spdy --save
-```
 
+## Setup certificate: ##
 
-## Setup Cert: ##
+Install java sdk:
 
-Install java sdk
-
-Only first time:
-```console
+```js
   sudo yum install java-1.8.0-openjdk
 ```
 
-### Simple run first time: ###
+#### Simple run first time: ####
 ```
 docker run -d --net="host" -e openvidu.secret=MAXIMUM -e openvidu.publicurl=https://maximumroulette.com:4443 -e openvidu.cdr=true -e server.port=4443 -e --rm -v /var/run/docker.sock:/var/run/docker.sock -v /var/applications/kurento-project/rec:/var/applications/kurento-project/rec -e openvidu.recording=true -e MY_UID=$(id -u $USER) -e openvidu.recording.path=/var/applications/kurento-project/rec -e openvidu.recording.public-access=true  openvidu/openvidu-server-kms:2.12.0
 ```
 
-### Prepare CERT: ###
+#### Prepare certificate: ####
 
 Export certificate in p12 format (password will be asked)
 YOUR_CRT.crt and YOUR_KEY.key files may be YOUR_CRT.pem a
@@ -63,24 +63,24 @@ openssl pkcs12 -export -name YOUR_KEYSTORE_ALIAS -in /etc/httpd/conf/ssl/maximum
  - password m**********
 
 
-### Generate jks (password will be asked again) ###
+#### Generate jks (password will be asked again) ####
 
 Step 2:
 
-```
+```js
 keytool -importkeystore -srckeystore p12keystore.p12 -srcstoretype pkcs12 -deststoretype pkcs12 -alias YOUR_KEYSTORE_ALIAS -destkeystore YOUR_KEYSTORE_NAME.jks
 ```
  - password same !
 
 Enter intro container bash (if needed):
 
-```console
+```bash
   docker exec -it ab3f39d64359 bash
 ```
 
  Copy cert and create new image.
 
-```console
+```bash
 docker cp /var/applications/kurento-project/YOUR_KEYSTORE_NAME.jks ab3f39d64359:/var/applications/kurento-project/YOUR_KEYSTORE_NAME.jks
 ```
 
@@ -129,3 +129,7 @@ Run:
 ```console
   node server.js https://maximumroulette.com:4443 MAXIMUM
 ```
+
+## Setup connector [DEV - WIP] ##
+
+ -
