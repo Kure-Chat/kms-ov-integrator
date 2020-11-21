@@ -1,15 +1,12 @@
-# kms-ov-integrator #
-### Based on Kurento media server and openvidu tutorials ###
+# kms-ov-integrator
+### Based on Kurento media server and openvidu tutorials
 
  - node-oriented
+   - [KMS OV] - [node.js] - [classic web]
+   - [KMS OV] - [node.js] - [vue]
 
-   KMS <-> OV <-> node.js <-> webapp
 
- - web-oriented
-
-   KMS <-> OV <-> webapp
-
-Licence:
+### Licence:
 
  - Kurento/kurento-media-server is licensed under the
 
