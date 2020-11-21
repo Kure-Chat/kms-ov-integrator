@@ -37,7 +37,9 @@ var bodyParser = require('body-parser'); // Pull information from HTML POST (exp
 var app = express(); // Create our app with express
 
 // Server configuration
-app.use(express.static(__dirname + '/public')); // Set the static files location
+// app.use(express.static(__dirname + '/public')); // Set the static files location
+app.use(express.static(__dirname + '/secure-vue/dist'));
+
 app.use(bodyParser.urlencoded({
     'extended': 'true'
 })); // Parse application/x-www-form-urlencoded
