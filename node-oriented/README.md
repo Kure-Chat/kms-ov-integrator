@@ -1,9 +1,9 @@
 
 # Application based on:                     #
 
- - <b> kurento media server KMS project        </b>
- - <b> openvidu server/tutorials project       </b>
- - <b> connector.js from visual-ts-game-engine </b>
+ - <b> Kurento media server KMS project        </b>
+ - <b> Openvidu server/tutorials project       </b>
+ - <b> Connector.js from visual-ts-game-engine </b>
 
 
 ## kms-ov-account-integrator ##
@@ -26,7 +26,7 @@ Install nodejs with yum:
  sudo yum install -y nodejs OR
 ```
 
-nvm install:
+If needed nvm install:
 ```bash
   curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
   export NVM_DIR="$HOME/.nvm"
@@ -138,4 +138,4 @@ Run node for hosting client:
 
 ## Setup connector [DEV - WIP] ##
 
- -
+ - INTEGRATED NOT TESTED 

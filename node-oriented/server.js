@@ -1,3 +1,15 @@
+
+/* Database, session staff */
+
+/*
+const Connector = require("./connector.js");
+const ConfigAccountSession = require("./config");
+
+var configAccountSession = new ConfigAccountSession();
+var accountSession = new Connector(configAccountSession);
+*/
+
+
 /* CONFIGURATION */
 
 var OpenVidu = require('openvidu-node-client').OpenVidu;

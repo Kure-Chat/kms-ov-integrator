@@ -1,12 +1,15 @@
 # kms-ov-integrator
 ### Based on Kurento media server and openvidu tutorials
 
- - node-oriented
+ - node-oriented (secured)
    - [KMS OV] - [node.js] - [classic web]
    - [KMS OV] - [node.js] - [vue]
 
+  database.js used from [visualTsGameEngine](https://github.com/zlatnaspirala/visual-ts-game-engine/blob/master/server/database/database.js)
+
  - react-native-mobile
-   - Android, iOS 
+    This is mobile client application 
+    - Android, iOS 
 
 ### Licence:
 
