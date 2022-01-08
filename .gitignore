@@ -1,2 +1,5 @@
 
 KSM-OV-INTEGRATOR.code-workspace
+*.NOTCOMMIT
+KURE.jks
+p12keystore.p12
